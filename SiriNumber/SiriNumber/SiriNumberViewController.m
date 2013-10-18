@@ -14,6 +14,7 @@
 @interface SiriNumberViewController ()
 
 @property (nonatomic, strong) UITextField *textField;
+@property (nonatomic, strong) UITextView *siriTextView;
 @property (nonatomic, strong) NSString *input;
 @property (nonatomic, strong) NSString *response;
 
@@ -29,7 +30,7 @@
 {
     [super loadView];
     
-    self.textField = [[UITextField alloc] initWithFrame:CGRectMake(60, 200, 200, 40)];
+    self.textField = [[UITextField alloc] initWithFrame:CGRectMake(60, 100, 200, 40)];
 
     self.textField.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     //    self.textField.borderStyle = UITextBorderStyleBezel;
@@ -46,6 +47,15 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.textField];
+    
+    self.siriTextView = [[UITextView alloc] initWithFrame:CGRectZero];
+    self.siriTextView.frame = CGRectMake(60, 200, 200, 80);
+    self.siriTextView.textColor = [UIColor blueColor];
+    self.siriTextView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.siriTextView.textAlignment = NSTextAlignmentCenter;
+    self.siriTextView.font = [UIFont boldSystemFontOfSize:20.0f];
+    self.siriTextView.delegate = self;
+    [self.view addSubview:self.siriTextView];
 }
 
 - (void)viewDidLoad
@@ -108,7 +118,9 @@
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     self.response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [SVProgressHUD showSuccessWithStatus:self.response];
+    self.siriTextView.text = self.response;
+    [self.siriTextView selectAll:self];
+//    [SVProgressHUD showSuccessWithStatus:self.response];
 //    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:self.response delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 //    [alertView show];
 }
@@ -126,6 +138,15 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
+}
+
+#pragma mark - UITextViewDelegate
+
+
+- (void)textViewDidChangeSelection:(UITextView *)textView
+{
+    NSLog(@"%@", textView.text);
+    
 }
 
 @end
