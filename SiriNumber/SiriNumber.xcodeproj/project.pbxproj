@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AB177F505B74433BFA27E7E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC4EF439AAF4489A1C01E80 /* libPods.a */; };
 		798E87C618105F3300C9B878 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 798E87C518105F3300C9B878 /* Foundation.framework */; };
 		798E87C818105F3300C9B878 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 798E87C718105F3300C9B878 /* CoreGraphics.framework */; };
 		798E87CA18105F3300C9B878 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 798E87C918105F3300C9B878 /* UIKit.framework */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3742C88CA3DF4E48BE9B0310 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		798E87C218105F3300C9B878 /* SiriNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiriNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		798E87C518105F3300C9B878 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		798E87C718105F3300C9B878 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,6 +58,7 @@
 		798E87F118105F3300C9B878 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		798E87F318105F3300C9B878 /* SiriNumberTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SiriNumberTests.m; sourceTree = "<group>"; };
 		798E8800181062A600C9B878 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		7DC4EF439AAF4489A1C01E80 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,7 @@
 				798E87C818105F3300C9B878 /* CoreGraphics.framework in Frameworks */,
 				798E87CA18105F3300C9B878 /* UIKit.framework in Frameworks */,
 				798E87C618105F3300C9B878 /* Foundation.framework in Frameworks */,
+				0AB177F505B74433BFA27E7E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +93,7 @@
 				798E87ED18105F3300C9B878 /* SiriNumberTests */,
 				798E87C418105F3300C9B878 /* Frameworks */,
 				798E87C318105F3300C9B878 /* Products */,
+				3742C88CA3DF4E48BE9B0310 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +113,7 @@
 				798E87C718105F3300C9B878 /* CoreGraphics.framework */,
 				798E87C918105F3300C9B878 /* UIKit.framework */,
 				798E87E718105F3300C9B878 /* XCTest.framework */,
+				7DC4EF439AAF4489A1C01E80 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 798E87F718105F3300C9B878 /* Build configuration list for PBXNativeTarget "SiriNumber" */;
 			buildPhases = (
+				1876904EA59D48EB855BE1C6 /* Check Pods Manifest.lock */,
 				798E87BE18105F3300C9B878 /* Sources */,
 				798E87BF18105F3300C9B878 /* Frameworks */,
 				798E87C018105F3300C9B878 /* Resources */,
+				715EB2B2774C4A23A386557A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,6 +257,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1876904EA59D48EB855BE1C6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		715EB2B2774C4A23A386557A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		798E87BE18105F3300C9B878 /* Sources */ = {
@@ -391,6 +432,7 @@
 		};
 		798E87F818105F3300C9B878 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3742C88CA3DF4E48BE9B0310 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -406,6 +448,7 @@
 		};
 		798E87F918105F3300C9B878 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3742C88CA3DF4E48BE9B0310 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -480,6 +523,7 @@
 				798E87F918105F3300C9B878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		798E87FA18105F3300C9B878 /* Build configuration list for PBXNativeTarget "SiriNumberTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +532,7 @@
 				798E87FC18105F3300C9B878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

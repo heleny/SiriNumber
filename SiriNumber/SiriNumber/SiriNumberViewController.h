@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SiriNumberViewController : UIViewController
+@interface SiriNumberViewController : UIViewController<NSURLConnectionDelegate, UIAlertViewDelegate>
 
 @end

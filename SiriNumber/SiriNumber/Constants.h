@@ -8,12 +8,9 @@
 
 #define localize(key, default) NSLocalizedStringWithDefaultValue(key, nil, [NSBundle mainBundle], default, nil)
 
-#pragma mark - Domain
-#define kNumbersAPIUrl @"http://numbersapi.com/number/type"
+#pragma mark - URL
+#define kNumbersAPIUrl @"http://numbersapi.com/"
 
 
-#pragma mark - Strings
-#define kTypeANumberLabel localize(@"type.a.number.label", @"Please type in a number")
-
-
-#endif
+#pragma mark - String
+#define kTypeANumberLabel localize(@"type.a.number.label", @"Please input a number")
