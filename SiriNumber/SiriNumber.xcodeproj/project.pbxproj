@@ -86,6 +86,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7934560F1811AA88008A6EF1 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				798E87DD18105F3300C9B878 /* SiriNumberViewController.h */,
+				798E87DE18105F3300C9B878 /* SiriNumberViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		793456101811AA97008A6EF1 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				798E87D718105F3300C9B878 /* Main_iPhone.storyboard */,
+				798E87DA18105F3300C9B878 /* Main_iPad.storyboard */,
+			);
+			name = storyboard;
+			sourceTree = "<group>";
+		};
+		793456111811AAAE008A6EF1 /* constant */ = {
+			isa = PBXGroup;
+			children = (
+				798E8800181062A600C9B878 /* Constants.h */,
+			);
+			name = constant;
+			sourceTree = "<group>";
+		};
 		798E87B918105F3300C9B878 = {
 			isa = PBXGroup;
 			children = (
@@ -121,15 +147,13 @@
 		798E87CB18105F3300C9B878 /* SiriNumber */ = {
 			isa = PBXGroup;
 			children = (
+				793456111811AAAE008A6EF1 /* constant */,
+				793456101811AA97008A6EF1 /* storyboard */,
+				7934560F1811AA88008A6EF1 /* controller */,
 				798E87D418105F3300C9B878 /* AppDelegate.h */,
 				798E87D518105F3300C9B878 /* AppDelegate.m */,
-				798E87D718105F3300C9B878 /* Main_iPhone.storyboard */,
-				798E87DA18105F3300C9B878 /* Main_iPad.storyboard */,
-				798E87DD18105F3300C9B878 /* SiriNumberViewController.h */,
-				798E87DE18105F3300C9B878 /* SiriNumberViewController.m */,
 				798E87E018105F3300C9B878 /* Images.xcassets */,
 				798E87CC18105F3300C9B878 /* Supporting Files */,
-				798E8800181062A600C9B878 /* Constants.h */,
 			);
 			path = SiriNumber;
 			sourceTree = "<group>";
